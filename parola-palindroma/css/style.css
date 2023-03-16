@@ -15,3 +15,7 @@
 .dc-result-false{
     background-color: #2196F3;
 }
+
+.dc-result-error{
+    background-color: black;
+}
