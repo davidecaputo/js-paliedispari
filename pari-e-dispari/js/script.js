@@ -20,16 +20,26 @@ const btn = document.querySelector('button');
 btn.addEventListener('click', controllNumber);
 
 function controllNumber(){
-    userNumber = parseInt(boxNumber.value);
+    const userNumber = parseInt(boxNumber.value);
     console.log(userNumber);
-    select = boxSelect.value;
-    console.log(select);
-    computerNumber = getRndInteger(1, 5);
+    const selected = boxSelect.value;
+    console.log(selected);
+    let computerNumber = getRndInteger(1, 5);
     console.log(computerNumber);
-    numberAddition = userNumber + computerNumber;
+    let numberAddition = userNumber + computerNumber;
     console.log(numberAddition);
+    let resultEvenOrOdd = evenOrOdd(numberAddition);
+    console.log(resultEvenOrOdd);
 }
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function evenOrOdd(number){
+    if((number % 2) === 0){
+        return true;
+    } else {
+        return false;
+    }
 }
