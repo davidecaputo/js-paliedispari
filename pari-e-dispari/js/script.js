@@ -11,6 +11,9 @@
     <div class="dc-result lose">
         Hai perso
     </div>
+    <div class="dc-result error">
+        Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari
+    </div>
 */
 
 const boxNumber = document.querySelector('input');
