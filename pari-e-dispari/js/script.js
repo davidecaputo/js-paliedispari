@@ -30,11 +30,23 @@ function controllNumber(){
     console.log(numberAddition);
     let resultEvenOrOdd = evenOrOdd(numberAddition);
     console.log(resultEvenOrOdd);
-}
+    if(selected !== 'Seleziona' && userNumber){
+        if (selected === 'pari' && resultEvenOrOdd){
+            console.log('hai vinto');
+        } else if(selected === 'dispari' && !resultEvenOrOdd){
+            console.log('hai vinto');
+        } else {
+            console.log('hai perso');
+        }
+    } else {
+        console.log('Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari');
+    }
+};
+
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
-}
+};
 
 function evenOrOdd(number){
     if((number % 2) === 0){
@@ -42,4 +54,4 @@ function evenOrOdd(number){
     } else {
         return false;
     }
-}
+};
