@@ -13,3 +13,6 @@
     </div>
 */
 
+const boxNumber = document.querySelector('input');
+const boxSelect = document.querySelector('select');
+const btn = document.querySelector('button');
