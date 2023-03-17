@@ -25,32 +25,24 @@ btn.addEventListener('click', controllNumber);
 
 function controllNumber(){
     const userNumber = parseInt(boxNumber.value);
-    console.log(userNumber);
     const selected = boxSelect.value;
-    console.log(selected);
     let computerNumber = getRndInteger(1, 5);
-    console.log(computerNumber);
     const numberAddition = userNumber + computerNumber;
-    console.log(numberAddition);
     const resultEvenOrOdd = evenOrOdd(numberAddition);
-    console.log(resultEvenOrOdd);
     if(selected !== 'Seleziona' && userNumber && userNumber >= 1 && userNumber <= 5){
         if (selected === 'pari' && resultEvenOrOdd){
-            console.log('hai vinto');
             container.innerHTML = `
                 <div class="d-flex justify-content-center align-items-center dc-result win">
                     <span>Hai vinto</span>
                 </div>
             `
         } else if(selected === 'dispari' && !resultEvenOrOdd){
-            console.log('hai vinto');
             container.innerHTML = `
                 <div class="d-flex justify-content-center align-items-center dc-result win">
                     <span>Hai vinto</span>
                 </div>
             `
         } else {
-            console.log('hai perso');
             container.innerHTML = `
                 <div class="d-flex justify-content-center align-items-center dc-result lose">
                     <span>Hai perso</span>
@@ -58,7 +50,6 @@ function controllNumber(){
             `
         }
     } else {
-        console.log('Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari');
         container.innerHTML = `
             <div class="d-flex justify-content-center align-items-center dc-result error">
                 Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari
