@@ -5,13 +5,13 @@
     Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
     Dichiariamo chi ha vinto.
 
-    <div class="dc-result win">
-        Hai vinto
+    <div class="d-flex justify-content-center align-items-center dc-result win">
+        <span>Hai vinto</span>
     </div>
-    <div class="dc-result lose">
-        Hai perso
+    <div class="d-flex justify-content-center align-items-center dc-result lose">
+        <span>Hai perso</span>
     </div>
-    <div class="dc-result error">
+    <div class="d-flex justify-content-center align-items-center dc-result error">
         Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari
     </div>
 */
@@ -19,6 +19,7 @@
 const boxNumber = document.querySelector('input');
 const boxSelect = document.querySelector('select');
 const btn = document.querySelector('button');
+const container = document.querySelector('.dc-container');
 
 btn.addEventListener('click', controllNumber);
 
@@ -29,23 +30,42 @@ function controllNumber(){
     console.log(selected);
     let computerNumber = getRndInteger(1, 5);
     console.log(computerNumber);
-    let numberAddition = userNumber + computerNumber;
+    const numberAddition = userNumber + computerNumber;
     console.log(numberAddition);
-    let resultEvenOrOdd = evenOrOdd(numberAddition);
+    const resultEvenOrOdd = evenOrOdd(numberAddition);
     console.log(resultEvenOrOdd);
-    if(selected !== 'Seleziona' && userNumber){
+    if(selected !== 'Seleziona' && userNumber && userNumber >= 1 && userNumber <= 5){
         if (selected === 'pari' && resultEvenOrOdd){
             console.log('hai vinto');
+            container.innerHTML = `
+                <div class="d-flex justify-content-center align-items-center dc-result win">
+                    <span>Hai vinto</span>
+                </div>
+            `
         } else if(selected === 'dispari' && !resultEvenOrOdd){
             console.log('hai vinto');
+            container.innerHTML = `
+                <div class="d-flex justify-content-center align-items-center dc-result win">
+                    <span>Hai vinto</span>
+                </div>
+            `
         } else {
             console.log('hai perso');
+            container.innerHTML = `
+                <div class="d-flex justify-content-center align-items-center dc-result lose">
+                    <span>Hai perso</span>
+                </div>
+            `
         }
     } else {
         console.log('Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari');
+        container.innerHTML = `
+            <div class="d-flex justify-content-center align-items-center dc-result error">
+                Il gioco non funziona, forse non hai inserito il numero o non hai scelto pari o dispari
+            </div>
+            `
     }
 };
-
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
