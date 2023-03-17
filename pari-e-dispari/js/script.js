@@ -16,3 +16,20 @@
 const boxNumber = document.querySelector('input');
 const boxSelect = document.querySelector('select');
 const btn = document.querySelector('button');
+
+btn.addEventListener('click', controllNumber);
+
+function controllNumber(){
+    userNumber = parseInt(boxNumber.value);
+    console.log(userNumber);
+    select = boxSelect.value;
+    console.log(select);
+    computerNumber = getRndInteger(1, 5);
+    console.log(computerNumber);
+    numberAddition = userNumber + computerNumber;
+    console.log(numberAddition);
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
