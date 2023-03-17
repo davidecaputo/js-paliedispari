@@ -1,0 +1,14 @@
+.dc-result{
+    padding: 50px 100px;
+    border-radius: 100px;
+    color: white;
+    font-size: 40px;
+}
+
+.win{
+    background-color: green;
+}
+
+.lose{
+    background-color: red;
+}
